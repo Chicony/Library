@@ -24,7 +24,8 @@ export default new Router({
     {
       path: '/list/:id',
       name: 'book',
-      component: Book
+      component: Book,
+      props: true
     },
     {
       path: '*',

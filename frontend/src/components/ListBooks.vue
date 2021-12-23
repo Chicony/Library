@@ -1,10 +1,10 @@
 <template>
   <div class="container">
-    <div v-if="books.lenght === 0">Список пуст</div>
+    <div v-if="books.length === 0">Список пуст</div>
     <div class="columns is-multiline mt-3">
       <div class="column is-2" v-for="(book, index) in books" :key="index">
         <div class="card-book">
-          <router-link :to="{ name: 'book', params: { id: index + 1 } }">
+          <router-link :to="{ name: 'book', params: { id: index + 1, book: book } }">
             <img class="card-image" :src="book.image" alt="">
             <span class="card-title">{{ book.name }}</span>
           </router-link>
