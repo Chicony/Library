@@ -1,10 +1,13 @@
-from django.urls import path
-from rest_framework.urlpatterns import format_suffix_patterns
-from . import views
+from django.contrib import admin
+from django.urls import path, include
+from rest_framework import routers
+
+from .views import BookList
+
+router = routers.DefaultRouter()
+router.register('books', BookList)
 
 urlpatterns = [
-    path('books/', views.BookList.as_view()),
-    path('books/<int:pk>/', views.BookDetails.as_view()),
+    path('api/', include(router.urls)),
+    path('api/admin', admin.site.urls),
 ]
-
-urlpatterns = format_suffix_patterns(urlpatterns)
