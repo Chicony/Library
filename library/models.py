@@ -6,4 +6,12 @@ class Book(models.Model):
     author = models.CharField('Автор', max_length=50)
     description = models.TextField('Описание')
     image = models.ImageField(null=True, blank=True, upload_to="images_books")
+    file = models.FileField(null=True, upload_to="file_books")
+
+
+class Comment(models.Model):
+    book = models.ForeignKey(Book, related_name='comments', on_delete=models.CASCADE)
+    name = models.CharField(max_length=80)
+    email = models.EmailField()
+    body = models.TextField()
 

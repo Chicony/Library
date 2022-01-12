@@ -2,8 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Main from './components/Main.vue'
-import ListBooks from './components/ListBooks.vue'
 import Book from './components/Book.vue'
+import List from './components/ListBooks.vue'
 import NotFound from './components/404.vue'
 
 Vue.use(Router)
@@ -19,7 +19,7 @@ export default new Router({
     {
       path: '/list',
       name: 'list',
-      component: ListBooks
+      component: List
     },
     {
       path: '/list/:id',
